@@ -1,6 +1,42 @@
-<mvc:View controllerName="com.bootcamp.sapui5.freestyle.controller.Home"
+<mvc:View
+    xmlns:vbm="sap.ui.vbm"
+    controllerName="com.bootcamp.sapui5.freestyle.controller.Home"
     xmlns:mvc="sap.ui.core.mvc"
-    xmlns="sap.m">
-    <Page id="page" title="{i18n>title}">
+    xmlns="sap.m"
+>
+    <Page
+        id="page"
+        title="{i18n>title}"
+        class="myAppDemoWT"
+    >
+        <content>
+            <Panel
+                id="panelHome"
+                headerText="{i18n>helloPanelTitle}"
+                class="sapUiResponsiveMargin sapUiContentPadding"
+                width="auto"
+            >
+                <Button
+                    id="btnHello"
+                    text="{i18n>showHelloButtonText}"
+                    press=".onShowHello"
+                    class="sapUiSmallMarginEnd"
+                />
+                <Input
+                    id="inputHello"
+                    type="Text"
+                    value="{viewName>/name}"
+                    placeholder="{i18n>placeholderName}"
+                    valueLiveUpdate="true"
+                    width="60%"
+                />
+                <FormattedText
+                    id="txtMsg"
+                    htmlText="{viewName>/name}"
+                    textAlign="Center"
+                    class="sapUiSmallMargin sapThemeHighlight-asColor myCustomText"
+                />
+            </Panel>
+        </content>
     </Page>
 </mvc:View>
