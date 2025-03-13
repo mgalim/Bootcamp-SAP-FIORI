@@ -5,36 +5,22 @@
     xmlns="sap.m"
 >
     <Page
-        id="page"
+        id="pageHome"
         title="{i18n>title}"
         class="myAppDemoWT"
     >
         <content>
             <Panel
                 id="panelHome"
-                headerText="{i18n>helloPanelTitle}"
-                class="sapUiResponsiveMargin sapUiContentPadding"
+                headerText="{i18n>panelTitle}"
+                class="sapUiResponsiveMargin"
                 width="auto"
             >
                 <Button
-                    id="btnHello"
-                    text="{i18n>showHelloButtonText}"
-                    press=".onShowHello"
+                    id="btnSearch"
+                    text="{i18n>textSearch}"
+                    press=".onPress"
                     class="sapUiSmallMarginEnd"
-                />
-                <Input
-                    id="inputHello"
-                    type="Text"
-                    value="{viewName>/name}"
-                    placeholder="{i18n>placeholderName}"
-                    valueLiveUpdate="true"
-                    width="60%"
-                />
-                <FormattedText
-                    id="txtMsg"
-                    htmlText="{viewName>/name}"
-                    textAlign="Center"
-                    class="sapUiSmallMargin sapThemeHighlight-asColor myCustomText"
                 />
             </Panel>
         </content>
