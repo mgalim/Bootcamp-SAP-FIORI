@@ -5,24 +5,27 @@
     xmlns="sap.m"
 >
     <Page
-        id="pageHome"
         title="{i18n>title}"
         class="myAppDemoWT"
     >
         <content>
             <Panel
-                id="panelHome"
                 headerText="{i18n>panelTitle}"
                 class="sapUiResponsiveMargin"
                 width="auto"
             >
-                <Button
-                    id="btnSearch"
-                    text="{i18n>textSearch}"
-                    press=".onPress"
-                    class="sapUiSmallMarginEnd"
-                />
+                <content>
+                    <Button
+                        id="btnSearch"
+                        text="{i18n>textSearch}"
+                        press=".onPress"
+                        class="sapUiSmallMarginEnd"
+                    />
+                </content>
             </Panel>
+            <mvc:XMLView
+                viewName="com.bootcamp.sapui5.freestyle.view.ProductList"
+            />
         </content>
     </Page>
 </mvc:View>

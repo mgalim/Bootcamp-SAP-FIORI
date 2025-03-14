@@ -23,9 +23,10 @@ sap.ui.define(
         // enable routing
         this.getRouter().initialize();
 
-        // Inicializamos el HomeHelper con el modelo OData
-        const oNorthwindModel = this.getModel("Northwind");
-          HomeHelper.init(oNorthwindModel);
+        this.setInitModel();
+      },
+      setInitModel: function () {
+        HomeHelper.init(this.getModel("Northwind"));
       },
     });
   }
