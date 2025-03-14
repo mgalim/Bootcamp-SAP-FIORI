@@ -2,9 +2,8 @@ sap.ui.define(
   [
     "sap/ui/core/mvc/Controller",
     "com/bootcamp/sapui5/freestyle/utils/HomeHelper",
-    "sap/ui/model/json/JSONModel",
   ],
-  (Controller, HomeHelper, JSONModel) => {
+  (Controller, HomeHelper) => {
     "use strict";
 
     return Controller.extend("com.bootcamp.sapui5.freestyle.controller.Home", {
@@ -12,8 +11,7 @@ sap.ui.define(
 
       onPress: async function () {
         const oData = await HomeHelper.getDataProducts();
-        const oModel = new JSONModel({ Products: oData[0].results });
-        this.getView().setModel(oModel, "products");
+        await HomeHelper.setProductModel(this, oData[0].results);
       },
     });
   }
